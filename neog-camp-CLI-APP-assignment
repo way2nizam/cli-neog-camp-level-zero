@@ -1,0 +1,41 @@
+var readlineSync = require('readline-sync');
+
+var score = 0;
+var highScore = 8;
+
+console.log('Superhero Quizzes.\nAre you a true Superhero expert? Take a quiz below to find out if you are right.');
+var userName = readlineSync.question('\nEnter your full name ? -> ')
+
+console.log('\nHello, ' + userName + ', Lets Start!');
+
+function questions (quest,ans) {
+  
+  var userAns = readlineSync.question(quest)
+
+  if (ans === userAns) {
+    console.log('\nCorrect Answer!\nYour Answer: ' + userAns);
+    score = score+1;
+  } else console.log('\nYour answer is wrong');
+
+  console.log('Current Score = ' + score);
+}
+
+
+questions('\nQ1. The Man of Steel is another name for which superhero? ', 'superman');
+questions('\nQ2. What is Black Widow real name? ', 'natasha');
+questions('\nQ3. Whose entire skeletal system was fused with the metal adamantium?','wolverine');
+questions('\nQ4. On which planet was the Soul Stone stored??','vormir');
+questions('\nQ5. Which metal is Captain America shield made of?','vibranium');
+questions('\nQ6. Which planet is Superman home?','krypton');
+questions('\nQ7. What is the name of Batman Butler??','alfred');
+questions('\nQ8. Which one of the following has a keen sense of smell?','wolverine');
+questions('\nQ9. Which tribe does Diana/Wonder Woman belong to?','the amazons');
+questions('\nQ10. Who is the love interest of The Joker??','harley quinn');
+
+console.log('\nYour Final Score = ' + score);
+
+if (score>highScore){
+  console.log('Congrats, Your break the high score, your final score = ', score)  
+}
+
+console.log("Current High Score by Deepak = "+ highScore+'\n\nIf your score is higher than current high score, take a screenshot & share on my whatsapp number +91 9971564798, I will update it with your name');
