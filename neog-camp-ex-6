@@ -1,0 +1,13 @@
+var readlineSync = require('readline-sync');
+
+var userHometown = readlineSync.question('What is my hometown ? ');
+
+hometown = 'Ghaziabad';
+
+score = 0;
+
+if (hometown === userHometown) {
+  console.log('Right Answer')
+  score = score + 1;  
+  console.log('Score = ' + score)
+} else console.log('Wrong Answer')
