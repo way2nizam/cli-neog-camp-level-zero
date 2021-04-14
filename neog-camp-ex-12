@@ -1,0 +1,15 @@
+var superman = {
+  power:'high',
+  strength:'moderate'
+}
+
+var batman = {
+  power:'moderate',
+  strength:'high'
+}
+
+console.log("Superman strength: "+superman.strength);
+console.log("Batman strength: "+batman.strength);
+
+console.log("Superman power: "+superman.power);
+console.log("Batman power: "+batman.power);
