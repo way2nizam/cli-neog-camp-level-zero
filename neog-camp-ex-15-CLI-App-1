@@ -1,0 +1,34 @@
+var readlineSync = require('readline-sync');
+
+var score = 0;
+var highScore = 4;
+
+var userName = readlineSync.question('What is your name ? ')
+
+console.log('Welcome to our Quiz, ' + userName +'\ncheck how much you know about quiz creater ?\n');
+
+function questions (quest,ans) {
+  
+  var userAns = readlineSync.question(quest)
+
+  if (ans === userAns) {
+    console.log('Correct Answer');
+    score = score+1;
+  } else console.log('Wrong Answer');
+
+  console.log('Your score = ' + score+'\n');
+}
+
+if (score>highScore){
+  highScore=score;
+}
+
+
+questions('1.What is my name ? ', 'nizam');
+questions('2.where do i live ? ', 'ghaziabad');
+questions('3. My favourite programming languge ? ', 'javascript');
+questions('4.My favourite dish ? ', 'aloo');
+questions('5. My favourite destination place? ', 'maldives');
+
+console.log("Current High Score by Rahul = "+ highScore+'\n\nIf your score is higher than current high score, take a screenshot & share on my whatsapp number +91 9971564798, I will update it with your name');
+
