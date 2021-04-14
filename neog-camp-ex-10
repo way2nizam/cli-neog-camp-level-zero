@@ -1,0 +1,6 @@
+var groceryItems = ['bread', 'butter', 'milk', 'tea', 'sugar'];
+
+console.log('List of grocery items to buy: '+groceryItems);
+console.log('\nTotal Items: ' + groceryItems.length)
+
+console.log('\nFirst Item: '+ groceryItems[0] + ',\nThird Item: ' + groceryItems[2] + ', \nLast Item: ' + groceryItems[4]);
