@@ -1,0 +1,12 @@
+var readlineSync = require('readline-sync');
+
+var num1 = readlineSync.questionInt('Enter First Number : ');
+
+var num2 = readlineSync.questionInt('Enter Second Number : ');
+
+function add (a, b) {
+  return a+b;
+}
+
+var sum = add(num1,num2);
+console.log('Sum = ' + sum);
