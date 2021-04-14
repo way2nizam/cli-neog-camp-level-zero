@@ -1,0 +1,5 @@
+var groceryItems = ['bread', 'butter', 'milk', 'tea', 'sugar'];
+
+for(var i=0 ; i<(groceryItems.length) ; i++) {
+  console.log(i+". "+groceryItems[i]);
+}
