@@ -1,0 +1,23 @@
+var readlineSync = require('readline-sync');
+
+var score = 0;
+
+var userName = readlineSync.question('What is your name ? ')
+
+console.log('Welcome ' + userName);
+
+function questions (quest,ans) {
+  
+  var userAns = readlineSync.question(quest)
+
+  if (ans === userAns) {
+    console.log('your answer is correct');
+    score = score+1;
+  } else console.log('your answer is wrong');
+
+  console.log('Your Score = ' + score);
+}
+
+
+questions('Pink city of India ? ', 'jaipur');
+questions('Lake city of India ? ', 'udaipur');
