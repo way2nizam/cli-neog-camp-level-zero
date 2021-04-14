@@ -1,0 +1,12 @@
+questions =[ 
+{
+  q1: "Who is my favorite superhero?",
+  a1: "Shaktimaan"
+},
+
+{
+  q2: "Which is my favorite sad song?",
+  a1: "Ek dl hai, ek jaan hai"
+}
+]
+console.log(questions[0].a1);
