@@ -1,0 +1,12 @@
+var readlineSync = require("readline-sync");
+
+const l = readlineSync.question("Enter the number for star print ")
+
+for(var i=1 ; i<=l ; i++) {
+  console.log("i="+i);
+
+  for(var j=1; j<=i; j++){
+          console.log('*'+" j="+j);
+  }
+  console.log('\n');
+}
