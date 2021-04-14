@@ -1,0 +1,7 @@
+var readlineSync = require('readline-sync');
+
+var userAge = readlineSync.question('What is your age ? ');
+
+if(userAge >= 25) {
+  console.log('Right')
+} else console.log('Wrong');
