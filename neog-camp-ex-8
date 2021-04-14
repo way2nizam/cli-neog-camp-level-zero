@@ -1,0 +1,19 @@
+var readlineSync = require ('readline-sync');
+
+var score = 0;  
+
+function ques(questions,ans) {
+
+  var userAns = readlineSync.question(questions)
+
+  if (ans===userAns) {
+    console.log('Your answer '+ userAns + ' is correct');
+  score = score+1;
+  console.log('Score= ' + score);
+  } else console.log('Wrong answer')
+  
+}
+
+ques ('My favourite programming language: ', 'javascript');
+
+ques ('Where do i live ? ', 'ghaziabad');
