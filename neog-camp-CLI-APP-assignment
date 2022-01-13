@@ -1,41 +1,92 @@
-var readlineSync = require('readline-sync');
+const readlineSync = require('readline-sync');
 
 var score = 0;
-var highScore = 8;
 
-console.log('Superhero Quizzes.\nAre you a true Superhero expert? Take a quiz below to find out if you are right.');
-var userName = readlineSync.question('\nEnter your full name ? -> ')
+let highScore = [
+  {
+    name:'rahul',
+    score:9
+  }
+]
 
-console.log('\nHello, ' + userName + ', Lets Start!');
+console.log(`Welcome to Superhero Quiz.\n\nAre you a true Superhero lover? Take a quiz below to test your knowledge.`);
+var userName = readlineSync.question(`\nEnter your full name -> `)
 
-function questions (quest,ans) {
+console.log(`\nHello ${userName} Lets Start!`);
+
+const superheroQuiz = (question,answer) => {
   
-  var userAns = readlineSync.question(quest)
+  var userAnswer = readlineSync.question(question)
 
-  if (ans === userAns) {
-    console.log('\nCorrect Answer!\nYour Answer: ' + userAns);
+  if (answer === userAnswer) {
+    console.log( `\nCorrect Answer!\nYour Answer:${userAnswer}`);
     score = score+1;
-  } else console.log('\nYour answer is wrong');
+  } else console.log(`\nYour answer is wrong.\nCorrect Answer is ${questionList[i].a}.`);
 
-  console.log('Current Score = ' + score);
+  console.log(`\nCurrent Score = ${score}`);
 }
 
+questionList= [
+  {
+    q:'\nQ1. The Man of Steel is another name for which superhero? ',
+    a:'superman'
+  },
 
-questions('\nQ1. The Man of Steel is another name for which superhero? ', 'superman');
-questions('\nQ2. What is Black Widow real name? ', 'natasha');
-questions('\nQ3. Whose entire skeletal system was fused with the metal adamantium? ','wolverine');
-questions('\nQ4. On which planet was the Soul Stone stored?? ','vormir');
-questions('\nQ5. Which metal is Captain America shield made of? ','vibranium');
-questions('\nQ6. Which planet is Superman home? ','krypton');
-questions('\nQ7. What is the name of Batman Butler?? ','alfred');
-questions('\nQ8. Which one of the following has a keen sense of smell? ','wolverine');
-questions('\nQ9. Which tribe does Diana/Wonder Woman belong to? ','the amazons');
-questions('\nQ10. Who is the love interest of The Joker?? ','harley quinn');
+  {
+    q:'\nQ2. What is Black Widow real name? ',
+    a:'natasha'
+  },
 
-console.log('\nYour Final Score = ' + score);
+  {
+    q:'\nQ3. Whose entire skeletal system was fused with the metal adamantium? ',
+    a:'wolverine'
+  },
 
-if (score>highScore){
-  console.log('Congrats, Your break the high score, your final score = ', score)  
+  {
+    q:'\nQ4. On which planet was the Soul Stone stored? ',
+    a:'vormir'
+  },
+
+  {
+    q:'\nQ5. Which metal is Captain America shield made of? ',
+    a:'vibranium'
+  },
+
+  {
+    q:'\nQ6. Which planet is Superman home? ',
+    a:'krypton'
+  },
+
+  {
+    q:'\nQ7. What is the name of Batman Butler? ',
+    a:'alfred'
+  },
+
+  {
+    q:'\nQ8. Which one of the following has a keen sense of smell? ',
+    a:'wolverine'
+  },
+
+  {
+    q:'\nQ9. Which tribe does Diana/Wonder Woman belong to? ',
+    a:'the amazons'
+  },
+
+  {
+    q:'\nQ10. Who is the love interest of The Joker? ',
+    a:'harley quinn'
+  },
+]
+
+
+for (var i=0; i<questionList.length;i++) {
+  superheroQuiz(questionList[i].q, questionList[i].a);
 }
 
-console.log("\nCurrent High Score by Deepak = "+ highScore+'\n\nIf your score is higher than current high score, take a screenshot & share on my whatsapp number +91 9971564798, I will update it with your name');
+console.log(`\nYour Final Score = ${score}`);
+
+if (score>highScore[0].score){
+  console.log(`\nCongrats, Your break the high score, your final score = , ${score}`)  
+}
+
+console.log(`\nCurrent high score by ${highScore[0].name} is ${highScore[0].score}.\nIf your score is higher than current high score, take a screenshot & share on my whatsapp number +91 9971564798, I will update it with your name`);
